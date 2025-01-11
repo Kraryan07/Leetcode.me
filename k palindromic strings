@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool canConstruct(string s, int k) {
+        unordered_map<char,int>mpp;
+        for(int i=0;i<s.size();i++){
+            mpp[s[i]]++;
+        }
+        int sin=0;
+        for( auto it:mpp){
+            if(it.second%2==1) sin++;
+        }
+        if(sin<=k&&k<=s.size()){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+};
